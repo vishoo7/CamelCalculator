@@ -3,11 +3,65 @@
 <html ng-app="camelCalcApp">
   <head>
     <title></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="camel.js"></script>
+    <link rel="stylesheet" href="camel.css" />
   </head>
   <body ng-view>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <header>
+      <h1>How many camels for your boyfriend?</h1>
+    </header>
+    <div ng-controller="CamelCalcController as camelCalc" class="container">
+      <div class="row">
+        <div class="left"><span>Age</span></div>
+        <div class="center"><span></span></div>
+        <div class="right"><input type="text" name="age" value=""></div>
+      </div>
+      <div class="row">
+        <div class="left"><span>Height(cm)</span></div>
+        <div class="center"><span></span></div>
+        <div class="right"><input type="text" name="height" value=""></div>
+      </div>
+      <div class="row">
+        <div class="left"><span>Haircolor</span></div>
+        <div class="center"></div>
+        <div class="right">
+          <select ng-options="item as item.label for item in camelCalc.haircolors" ng-model="selected"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left"><span>Hairlength</span></div>
+        <div class="center"></div>
+        <div class="right"><select ng-options="item as item.label for item in camelCalc.hairlengths" ng-model="selected"></select></div>
+      </div>
+      <div class="row">
+        <div class="left"><span>Eyecolor</span></div>
+        <div class="center"></div>
+        <div class="right">
+          <select ng-options="item as item.label for item in camelCalc.eyecolors" ng-model="selected"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left"><span>Beard</span></div>
+        <div class="center"></div>
+        <div class="right">
+            <select ng-options="item as item.label for item in camelCalc.beards" ng-model="selected"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left"><span>Body</span></div>
+        <div class="center"></div>
+        <div class="right">
+          <select ng-options="item as item.label for item in camelCalc.bodytypes" ng-model="selected"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right">
+          <button type="submit" class="button">calculate</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
