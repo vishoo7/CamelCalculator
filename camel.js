@@ -1,8 +1,8 @@
 angular.module('camelCalcApp', [])
   .controller('CamelCalcController', function() {
     var camelcalc = this;
-    camelcalc.age = 22;
-    camelcalc.heightincm = 176;
+    camelcalc.age = {min: 14, max: 70, value: 22};
+    camelcalc.heightincm = {min: 140, max: 220, value: 176};
 
     camelcalc.hairlengths = [{
         id: 1,
@@ -48,25 +48,32 @@ angular.module('camelCalcApp', [])
       }];
     camelcalc.beards = [{
         id: 1,
-        label: 'none'
+        label: 'none',
+        img: './images/beardnone.png'
       }, {
         id: 2,
-        label: 'small'
+        label: 'small',
+        img: './images/beardsmall.png'
       },{
         id: 3,
-        label: 'medium'
+        label: 'medium',
+        img: './images/beardmiddle.png'
       },{
         id: 4,
-        label: 'large'
+        label: 'large',
+        img: './images/beardfull.png'
       }];
     camelcalc.bodytypes = [{
         id: 1,
-        label: 'muscular'
+        label: 'muscular',
+        img: './images/bodymuscular.png'
       }, {
         id: 2,
-        label: 'normal'
+        label: 'normal',
+        img: './images/bodynormal.png'
       },{
         id: 3,
-        label: 'chubby'
+        label: 'chubby',
+        img: './images/bodychubby.png'
       }];
   });
