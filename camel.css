@@ -1,6 +1,36 @@
+.radioimage-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.radioimage-selector input:active +.radioimage-cc{opacity: .9;}
+.radioimage-selector input:checked +.radioimage-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.radioimage-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:100px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+}
+.radioimage-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.9) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.9) opacity(.9);
+            filter: brightness(1.2) grayscale(.9) opacity(.9);
+}
 
 .container {
-    width: 80%
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .row {
@@ -8,18 +38,25 @@
     padding-top: 1.5em;
 }
 
-.left {
-    width: 25%
+.row-taller {
+    height: 105px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-top: 1.5em;
 }
 
-.middle {
-    width: 10%
+.row-label {
+  float: left;
+    width: 320px;
+    text-align: left;
+    margin: 0;
+    font-size: 20px;
+    border-bottom: 0;
 }
 
-.right {
-    width: 65%
+.inline-radio{
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .button {
-  
 }

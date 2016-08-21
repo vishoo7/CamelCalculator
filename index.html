@@ -4,63 +4,56 @@
   <head>
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="camel.js"></script>
     <link rel="stylesheet" href="camel.css" />
   </head>
   <body ng-view>
-    <header>
-      <h1>How many camels for your boyfriend?</h1>
-    </header>
     <div ng-controller="CamelCalcController as camelCalc" class="container">
-      <div class="row">
-        <div class="left"><span>Age</span></div>
-        <div class="center"><span></span></div>
-        <div class="right"><input type="text" name="age" value=""></div>
+      <div>
+        <h1>How many camels for your boyfriend?</h1>
       </div>
       <div class="row">
-        <div class="left"><span>Height(cm)</span></div>
-        <div class="center"><span></span></div>
-        <div class="right"><input type="text" name="height" value=""></div>
+         <span class="row-label">Age</span>
+         <input type="range" name="age" id="age" value="22" min="14" max="70">
       </div>
       <div class="row">
-        <div class="left"><span>Haircolor</span></div>
-        <div class="center"></div>
-        <div class="right">
-          <select ng-options="item as item.label for item in camelCalc.haircolors" ng-model="selected"></select>
-        </div>
+          <span class="row-label">Height(cm)</span>
+          <input type="range" name="height" id="height" value="176" min="140" max="220">
       </div>
       <div class="row">
-        <div class="left"><span>Hairlength</span></div>
-        <div class="center"></div>
-        <div class="right"><select ng-options="item as item.label for item in camelCalc.hairlengths" ng-model="selected"></select></div>
+         <span class="row-label">Hair Color</span>
+         <select id="haircolor" ng-options="item as item.label for item in camelCalc.haircolors" ng-model="haircolor"></select>
       </div>
       <div class="row">
-        <div class="left"><span>Eyecolor</span></div>
-        <div class="center"></div>
-        <div class="right">
-          <select ng-options="item as item.label for item in camelCalc.eyecolors" ng-model="selected"></select>
-        </div>
+           <span class="row-label">Hair Length</span>
+           <select id="hairlength" ng-options="item as item.label for item in camelCalc.hairlengths" ng-model="hairlength"></select>
       </div>
       <div class="row">
-        <div class="left"><span>Beard</span></div>
-        <div class="center"></div>
-        <div class="right">
-            <select ng-options="item as item.label for item in camelCalc.beards" ng-model="selected"></select>
-        </div>
+          <span class="row-label">Eye Color</span>
+          <label ng-repeat="eyecolor in camelCalc.eyecolors">
+           <input type="radio" name="eyecolor" ng-model="$parent.eyecolor" ng-value="eyecolor.id" /> {{eyecolor.label}}
+           </label>
+
+      </div>
+      <div class="row-taller">
+          <span class="row-label">Beard</span>
+          <div class="radioimage-selector">
+            <label class="radioimage-cc" style="background-image:url({{beard.img}});" ng-repeat="beard in camelCalc.beards">
+              <input type="radio" name="{{beard.label}}"  ng-model="selected" ng-value="{{beard.id}}" />
+            </label>
+          </div>
+      </div>
+      <div class="row-taller">
+          <span class="row-label">Body</span>
+          <div class="radioimage-selector">
+            <label class="radioimage-cc" style="background-image:url({{bodytype.img}});" ng-repeat="bodytype in camelCalc.bodytypes">
+              <input type="radio" name="{{bodytype.label}}"  ng-model="selected" ng-value="{{item.id}}" />
+            </label>
+          </div>
       </div>
       <div class="row">
-        <div class="left"><span>Body</span></div>
-        <div class="center"></div>
-        <div class="right">
-          <select ng-options="item as item.label for item in camelCalc.bodytypes" ng-model="selected"></select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="left"></div>
-        <div class="center"></div>
-        <div class="right">
           <button type="submit" class="button">calculate</button>
-        </div>
       </div>
     </div>
   </body>
