@@ -1,10 +1,16 @@
-
+/* index.html */
 .container {
     width: 80%;
     max-width: 960px;
     margin: 0 auto;
 }
 
+
+
+
+
+
+/* inputs.html */
 .row {
     border-bottom: 1px solid #e7e7e7;
     padding-top: 1.5em;
@@ -54,10 +60,31 @@
   margin-right: 10px;
 }
 
-.button {
-}
-
 input:checked {
     background-color: #e8972c;
     color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+/* results.html  */
+
+.centered{
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+}
+
+.result{
+
 }
