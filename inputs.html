@@ -1,0 +1,55 @@
+<div>
+  <h1>How many camels for your boyfriend?</h1>
+</div>
+<div class="row">
+   <span class="row-label">Age</span>
+   <md-slider-container>
+     before
+    <md-slider flex min="12" max="70" ng-model="age.value" aria-label="red" id="age-slider">
+    </md-slider>
+    after
+    <md-input-container>
+      <input flex type="number" ng-model="age.value" aria-label="red" aria-controls="red-slider">
+    </md-input-container>
+  </md-slider-container>
+</div>
+<div class="row">
+    <span class="row-label">Height(cm)</span>
+    <input type="range" name="height" id="height" value="176" min="140" max="220">
+</div>
+<div class="row">
+   <span class="row-label">Hair Color</span>
+   <select id="haircolor" ng-options="item as item.label for item in haircolors" ng-model="haircolor"></select>
+</div>
+<div class="row">
+     <span class="row-label">Hair Length</span>
+     <select id="hairlength" ng-options="item as item.label for item in hairlengths" ng-model="hairlength"></select>
+</div>
+<div class="row">
+    <span class="row-label">Eye Color</span>
+    <label ng-repeat="eyecolor in eyecolors">
+     <input type="radio" name="eyecolor" ng-model="$parent.eyecolor" ng-value="eyecolor.id" /> {{eyecolor.label}}
+     </label>
+
+</div>
+<div class="row-taller">
+    <span class="row-label">Beard</span>
+    <div class="image-list">
+      <input type="radio" name="beard" value="{{beard.label}}" id="{{'beard'+beard.id}}" ng-repeat="beard in beards">
+      <label for="{{'beard'+beard.id}}" ng-repeat="beard in beards">
+          <img src="{{beard.img}}">
+      </label>
+    <div>
+</div>
+<div class="row-taller">
+    <span class="row-label">Body</span>
+    <div class="image-list">
+      <input type="radio" name="body" value="{{bodytype.label}}" id="{{'body'+bodytype.id}}" ng-repeat="bodytype in bodytypes">
+      <label for="{{'body'+bodytype.id}}" ng-repeat="bodytype in bodytypes">
+          <img src="{{bodytype.img}}">
+      </label>
+    <div>
+</div>
+<div class="row">
+    <button type="submit" class="button">calculate</button>
+</div>
