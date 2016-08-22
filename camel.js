@@ -1,5 +1,5 @@
 
-var camelCalcApp = angular.module('camelCalcApp', ['ngRoute']);
+var camelCalcApp = angular.module('camelCalcApp', ['ngMaterial', 'ngAnimate', 'ngAria', 'ngRoute']);
 
 camelCalcApp.config(function($routeProvider) {
 		$routeProvider
@@ -19,7 +19,7 @@ camelCalcApp.config(function($routeProvider) {
 camelCalcApp.controller('AppCtrl', function($scope) {
 
     $scope.age = {min: 14, max: 70, value: 22};
-    $scope.heightincm = {min: 140, max: 220, value: 176};
+    $scope.height= {min: 140, max: 220, value: 176};
 
     $scope.hairlengths = [{
         id: 1,
