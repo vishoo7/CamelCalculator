@@ -16,6 +16,7 @@ camelCalcApp.config(function($routeProvider) {
 
 	});
 
+
 camelCalcApp.controller('AppCtrl', function($scope, $location) {
 
     $scope.age = {min: 14, max: 70, value: 22};
@@ -76,4 +77,31 @@ camelCalcApp.controller('AppCtrl', function($scope, $location) {
 camelCalcApp.controller('ResultsController', function($scope, $location) {
       var searchObject = $location.search();
       $scope.result = searchObject.result;
-	});
+	})
+  .directive('countUp', ['$compile',function($compile,$timeout) {
+    return {
+        restrict: 'E',
+        replace: false,
+        scope: true,
+        controller: ['$scope', '$element', '$attrs', '$timeout', function ($scope, $element, $attrs, $timeout) {
+            $scope.millis = 0;
+            if ($element.html().trim().length === 0) {
+                $element.append($compile('<h1>{{millis}}</h1>')($scope));
+            } else {
+                $element.append($compile($element.contents())($scope));
+            }
+
+            var i=0;
+            function timeloop () {
+                setTimeout(function () {
+                    $scope.millis++;
+                    $scope.$digest();
+                    i++;
+                    if (i<$scope.result) {
+                        timeloop();
+                    }
+                }, $scope.interval)
+            }
+            timeloop();
+        }]
+    }}]);
