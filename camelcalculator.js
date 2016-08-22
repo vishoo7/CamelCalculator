@@ -1,17 +1,3 @@
-'use strict';
-
-class Man {
-  constructor(age, height, bodyType, eyeColor, hairColor, hairLength, beard) {
-    this.age = age;
-    this.height = height;
-    this.bodyType = bodyType;
-    this.eyeColor = eyeColor;
-    this.hairColor = hairColor;
-    this.hairLength = hairLength;
-    this.beard = beard;
-  }
-}
-
 class CamelCalculator{
 
   calcBodyType(bodyType){
@@ -120,6 +106,7 @@ class CamelCalculator{
   }
 }
 
+/*
 var me = new Man(34, 155, "muscular", "brown", "black", "medium", "none");
 var perfect = new Man(25, 170, "muscular", "blue", "blonde", "long", "small");
 var worst = new Man(68, 145, "chubby", "brown", "grey", "bald", "big");
@@ -133,3 +120,4 @@ console.log(camelCalculator.calculate(perfect));
 console.log(camelCalculator.calculate(worst));
 console.log(camelCalculator.calculate(avg1));
 console.log(camelCalculator.calculate(avg2));
+*/
