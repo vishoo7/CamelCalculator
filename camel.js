@@ -22,7 +22,7 @@ camelCalcApp.controller('AppCtrl', function($scope, $location) {
     $scope.age = {min: 14, max: 70, value: 22};
     $scope.height= {min: 140, max: 220, value: 176};
 
-    $scope.hairlengths = ['long','middle','short'];
+    $scope.hairlengths = ['long','middle','short','bald'];
     $scope.haircolors = ['blonde','brown','black','red','grey'];
     $scope.eyecolors = ['blue','green','brown','grey'];
 
