@@ -1,10 +1,27 @@
-angular.module('camelCalcApp', [])
-  .controller('CamelCalcController', function() {
-    var camelcalc = this;
-    camelcalc.age = {min: 14, max: 70, value: 22};
-    camelcalc.heightincm = {min: 140, max: 220, value: 176};
 
-    camelcalc.hairlengths = [{
+var camelCalcApp = angular.module('camelCalcApp', ['ngRoute']);
+
+camelCalcApp.config(function($routeProvider) {
+		$routeProvider
+
+			.when('/', {
+				templateUrl : 'inputs.html',
+				controller  : 'AppCtrl'
+			})
+
+			.when('/results', {
+				templateUrl : 'results.html',
+				controller  : 'ResultsController'
+			})
+
+	});
+
+camelCalcApp.controller('AppCtrl', function($scope) {
+
+    $scope.age = {min: 14, max: 70, value: 22};
+    $scope.heightincm = {min: 140, max: 220, value: 176};
+
+    $scope.hairlengths = [{
         id: 1,
         label: 'long'
       }, {
@@ -17,7 +34,7 @@ angular.module('camelCalcApp', [])
         id: 4,
         label: 'long'
     }];
-    camelcalc.haircolors = [{
+    $scope.haircolors = [{
         id: 1,
         label: 'blonde'
       }, {
@@ -33,7 +50,7 @@ angular.module('camelCalcApp', [])
         id: 5,
         label: 'grey'
     }];
-    camelcalc.eyecolors = [{
+    $scope.eyecolors = [{
         id: 1,
         label: 'blue'
       }, {
@@ -46,7 +63,7 @@ angular.module('camelCalcApp', [])
         id: 4,
         label: 'grey'
       }];
-    camelcalc.beards = [{
+    $scope.beards = [{
         id: 1,
         label: 'none',
         img: './images/beardnone.png'
@@ -63,7 +80,7 @@ angular.module('camelCalcApp', [])
         label: 'large',
         img: './images/beardfull.png'
       }];
-    camelcalc.bodytypes = [{
+    $scope.bodytypes = [{
         id: 1,
         label: 'muscular',
         img: './images/bodymuscular.png'

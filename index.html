@@ -2,59 +2,28 @@
 <!DOCTYPE html>
 <html ng-app="camelCalcApp">
   <head>
-    <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="camel.js"></script>
+    <title>Camel Calculator</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css" />
     <link rel="stylesheet" href="camel.css" />
-  </head>
-  <body ng-view>
-    <div ng-controller="CamelCalcController as camelCalc" class="container">
-      <div>
-        <h1>How many camels for your boyfriend?</h1>
-      </div>
-      <div class="row">
-         <span class="row-label">Age</span>
-         <input type="range" name="age" id="age" value="22" min="14" max="70">
-      </div>
-      <div class="row">
-          <span class="row-label">Height(cm)</span>
-          <input type="range" name="height" id="height" value="176" min="140" max="220">
-      </div>
-      <div class="row">
-         <span class="row-label">Hair Color</span>
-         <select id="haircolor" ng-options="item as item.label for item in camelCalc.haircolors" ng-model="haircolor"></select>
-      </div>
-      <div class="row">
-           <span class="row-label">Hair Length</span>
-           <select id="hairlength" ng-options="item as item.label for item in camelCalc.hairlengths" ng-model="hairlength"></select>
-      </div>
-      <div class="row">
-          <span class="row-label">Eye Color</span>
-          <label ng-repeat="eyecolor in camelCalc.eyecolors">
-           <input type="radio" name="eyecolor" ng-model="$parent.eyecolor" ng-value="eyecolor.id" /> {{eyecolor.label}}
-           </label>
 
-      </div>
-      <div class="row-taller">
-          <span class="row-label">Beard</span>
-          <div class="radioimage-selector">
-            <label class="radioimage-cc" style="background-image:url({{beard.img}});" ng-repeat="beard in camelCalc.beards">
-              <input type="radio" name="{{beard.label}}"  ng-model="selected" ng-value="{{beard.id}}" />
-            </label>
-          </div>
-      </div>
-      <div class="row-taller">
-          <span class="row-label">Body</span>
-          <div class="radioimage-selector">
-            <label class="radioimage-cc" style="background-image:url({{bodytype.img}});" ng-repeat="bodytype in camelCalc.bodytypes">
-              <input type="radio" name="{{bodytype.label}}"  ng-model="selected" ng-value="{{item.id}}" />
-            </label>
-          </div>
-      </div>
-      <div class="row">
-          <button type="submit" class="button">calculate</button>
-      </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+      angular.module('AppCtrl', ['ngMaterial']);
+    </script>
+    <script src="camel.js"></script>
+  </head>
+  <body ng-controller="AppCtrl" ng-cloak>
+    <div class="container">
+      <div ng-view></div>
     </div>
   </body>
 </html>
