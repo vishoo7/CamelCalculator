@@ -4,10 +4,8 @@
 <div class="row">
    <span class="row-label">Age</span>
    <md-slider-container>
-     before
-    <md-slider flex min="12" max="70" ng-model="age.value" aria-label="red" id="age-slider">
+    <md-slider flex min="{{age.min}}" max="{{age.max}}" ng-model="age.value" aria-label="red" id="age-slider">
     </md-slider>
-    after
     <md-input-container>
       <input flex type="number" ng-model="age.value" aria-label="red" aria-controls="red-slider">
     </md-input-container>
@@ -15,7 +13,13 @@
 </div>
 <div class="row">
     <span class="row-label">Height(cm)</span>
-    <input type="range" name="height" id="height" value="176" min="140" max="220">
+    <md-slider-container>
+     <md-slider flex min="{{height.min}}" max="{{height.max}}" ng-model="height.value" aria-label="red" id="age-slider">
+     </md-slider>
+     <md-input-container>
+       <input flex type="number" ng-model="height.value" aria-label="red" aria-controls="red-slider">
+     </md-input-container>
+   </md-slider-container>
 </div>
 <div class="row">
    <span class="row-label">Hair Color</span>
@@ -35,20 +39,24 @@
 <div class="row-taller">
     <span class="row-label">Beard</span>
     <div class="image-list">
-      <input type="radio" name="beard" value="{{beard.label}}" id="{{'beard'+beard.id}}" ng-repeat="beard in beards">
-      <label for="{{'beard'+beard.id}}" ng-repeat="beard in beards">
-          <img src="{{beard.img}}">
-      </label>
-    <div>
+      <div ng-repeat="beard in beards" style="display: inline-block">
+        <input type="radio" name="beard" value="{{beard.label}}" id="{{'beard'+beard.id}}">
+        <label for="{{'beard'+beard.id}}">
+            <img src="{{beard.img}}">
+        </label>
+      </div>
+    </div>
 </div>
 <div class="row-taller">
     <span class="row-label">Body</span>
     <div class="image-list">
-      <input type="radio" name="body" value="{{bodytype.label}}" id="{{'body'+bodytype.id}}" ng-repeat="bodytype in bodytypes">
-      <label for="{{'body'+bodytype.id}}" ng-repeat="bodytype in bodytypes">
-          <img src="{{bodytype.img}}">
-      </label>
-    <div>
+      <div ng-repeat="bodytype in bodytypes" style="display: inline-block">
+        <input type="radio" name="body" value="{{bodytype.label}}" id="{{'body'+bodytype.id}}">
+        <label for="{{'body'+bodytype.id}}">
+            <img src="{{bodytype.img}}">
+        </label>
+      </div>
+    </div>
 </div>
 <div class="row">
     <button type="submit" class="button">calculate</button>

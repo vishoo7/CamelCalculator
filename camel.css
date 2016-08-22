@@ -11,7 +11,7 @@
 }
 
 .row-taller {
-    height: 105px;
+    height: 200px;
     border-bottom: 1px solid #e7e7e7;
     padding-top: 1.5em;
 }
@@ -26,6 +26,7 @@
     background-color: #e8972c;
     color: #ffffff;
 }
+
 .image-list label {
     box-sizing: border-box;
     display: inline-block;
@@ -36,12 +37,7 @@
     background-color: #ffffff;
     border: 1px solid #e8972c;
     color: #e8972c;
-    padding: 5px 5px;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: Helvetica;
     border-radius: 0;
-    margin-right: -6px;
 }
 
 .row-label {
