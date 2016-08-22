@@ -16,83 +16,45 @@ camelCalcApp.config(function($routeProvider) {
 
 	});
 
-camelCalcApp.controller('AppCtrl', function($scope) {
+camelCalcApp.controller('AppCtrl', function($scope, $location) {
 
     $scope.age = {min: 14, max: 70, value: 22};
     $scope.height= {min: 140, max: 220, value: 176};
 
-    $scope.hairlengths = [{
-        id: 1,
-        label: 'long'
-      }, {
-        id: 2,
-        label: 'middle'
-      },{
-        id: 3,
-        label: 'short'
-      },{
-        id: 4,
-        label: 'long'
-    }];
-    $scope.haircolors = [{
-        id: 1,
-        label: 'blonde'
-      }, {
-        id: 2,
-        label: 'brown'
-      },{
-        id: 3,
-        label: 'black'
-      },{
-        id: 4,
-        label: 'red'
-      },{
-        id: 5,
-        label: 'grey'
-    }];
-    $scope.eyecolors = [{
-        id: 1,
-        label: 'blue'
-      }, {
-        id: 2,
-        label: 'green'
-      },{
-        id: 3,
-        label: 'brown'
-      },{
-        id: 4,
-        label: 'grey'
-      }];
+    $scope.hairlengths = ['long','middle','short'];
+    $scope.haircolors = ['blonde','brown','black','red','grey'];
+    $scope.eyecolors = ['blue','green','brown','grey'];
+
     $scope.beards = [{
-        id: 1,
-        label: 'none',
+        value: 'none',
         img: './images/beardnone.png'
       }, {
-        id: 2,
-        label: 'small',
+        value: 'small',
         img: './images/beardsmall.png'
       },{
-        id: 3,
-        label: 'medium',
+        value: 'medium',
         img: './images/beardmiddle.png'
       },{
-        id: 4,
-        label: 'large',
+        value: 'large',
         img: './images/beardfull.png'
       }];
     $scope.bodytypes = [{
-        id: 1,
-        label: 'muscular',
+        value: 'muscular',
         img: './images/bodymuscular.png'
       }, {
-        id: 2,
-        label: 'normal',
+        value: 'normal',
         img: './images/bodynormal.png'
       },{
-        id: 3,
-        label: 'chubby',
+        value: 'chubby',
         img: './images/bodychubby.png'
       }];
+
+      //defaults
+      $scope.hairlength=$scope.hairlengths[0];
+      $scope.haircolor=$scope.haircolors[0];
+      $scope.eyecolor=$scope.eyecolors[0];
+      $scope.beard=$scope.beards[0].value;
+      $scope.bodytype=$scope.bodytypes[0].value;
   });
 
 camelCalcApp.controller('ResultsController', function($scope, $location) {
