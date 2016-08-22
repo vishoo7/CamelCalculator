@@ -55,6 +55,22 @@ camelCalcApp.controller('AppCtrl', function($scope, $location) {
       $scope.eyecolor=$scope.eyecolors[0];
       $scope.beard=$scope.beards[0].value;
       $scope.bodytype=$scope.bodytypes[0].value;
+
+      $scope.calculateCamels = function() {
+        var man = {
+          age: $scope.age.value,
+          height: $scope.height.value,
+          bodyType: $scope.bodytype,
+          eyeColor: $scope.eyecolor,
+          hairColor: $scope.haircolor,
+          hairLength: $scope.hairlength,
+          beard: $scope.beard
+        }
+
+        var camelCalculator = new CamelCalculator();
+        var camelScore = camelCalculator.calculate(man);
+        $location.url("/results?result=" + camelScore);
+      };
   });
 
 camelCalcApp.controller('ResultsController', function($scope, $location) {
