@@ -94,3 +94,8 @@ camelCalcApp.controller('AppCtrl', function($scope) {
         img: './images/bodychubby.png'
       }];
   });
+
+camelCalcApp.controller('ResultsController', function($scope, $location) {
+      var searchObject = $location.search();
+      $scope.result = searchObject.result;
+	});
