@@ -75,7 +75,7 @@ class CamelCalculator{
             return 8;
           case "short":
             return 7;
-          case "medium":
+          case "middle":
             return 5;
           case "bald":
             return 2;
