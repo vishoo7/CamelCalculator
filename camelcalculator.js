@@ -99,10 +99,10 @@ class CamelCalculator{
   }
 
   calculate(person) {
-    return this.calcBodyType(person.bodyType) + this.calcHeight(person.height)
-      + this.calcAge(person.age) + this.calcEyeColor(person.eyeColor)
-      + this.calcHairColor(person.hairColor) + this.calcHairLength(person.hairLength)
-      + this.calcBeard(person.beard);
+    return this.calcBodyType(person.bodyType) + this.calcHeight(person.height) +
+    this.calcAge(person.age) + this.calcEyeColor(person.eyeColor) +
+    this.calcHairColor(person.hairColor) +
+    this.calcHairLength(person.hairLength) + this.calcBeard(person.beard);
   }
 }
 
