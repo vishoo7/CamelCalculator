@@ -1,0 +1,22 @@
+{
+  "name": "vishoo7",
+  "version": "1.0.0",
+  "description": "my first package",
+  "main": "camel.js",
+  "scripts": {
+    "test": "./node_modules/jshint/bin/jshint camelcalculator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishoo7/CamelCalculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishoo7/CamelCalculator/issues"
+  },
+  "homepage": "https://github.com/vishoo7/CamelCalculator#readme",
+  "devDependencies": {
+    "jshint": "^2.9.3"
+  }
+}
